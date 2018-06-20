@@ -8,6 +8,21 @@ ingredients = [
 
 def sandwich_request(ingredients, order) 
   # your code here!
+  order.each do |food|
+    found = false 
+    ingredients.each do |food_type|
+      puts "food is: #{food}" 
+      puts "food type is: #{food_type}"
+      if food_type.include?(food)
+        found = true
+      end 
+      puts found 
+    end 
+    if found == false 
+      return false 
+    end 
+  end 
+  return true 
 end
 
 # example city_info hash
